@@ -29,7 +29,7 @@ func part1(f string) int {
 }
 
 func part2(f string) int {
-	scanner := util.CreateScannerFromFile(f)
+	// scanner := util.CreateScannerFromFile(f)
 	total := 0
 
 	return total
