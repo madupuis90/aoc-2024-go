@@ -30,7 +30,7 @@ func part1(f string) int {
 	for scanner.Scan() {
 		line := scanner.Text()
 		fields := strings.Fields(line)
-		fieldsInt := util.SliceAtoi(fields)
+		fieldsInt := util.StringSliceAtoi(fields)
 		total = total + isSafe(fieldsInt)
 	}
 
@@ -62,7 +62,7 @@ func part2(f string) int {
 	for scanner.Scan() {
 		line := scanner.Text()
 		fields := strings.Fields(line)
-		fieldsInt := util.SliceAtoi(fields)
+		fieldsInt := util.StringSliceAtoi(fields)
 		total = total + isSafe2(fieldsInt)
 	}
 

@@ -32,7 +32,7 @@ func part1(f string) int {
 		rStr := line[:colonIdx]
 		rNums := line[colonIdx+1:]
 		r, _ := strconv.Atoi(rStr)
-		nums := util.SliceAtoi(strings.Fields(rNums))
+		nums := util.StringSliceAtoi(strings.Fields(rNums))
 
 		root := buildTree(nums)
 
@@ -53,7 +53,7 @@ func part2(f string) int {
 		rStr := line[:colonIdx]
 		rNums := line[colonIdx+1:]
 		r, _ := strconv.Atoi(rStr)
-		nums := util.SliceAtoi(strings.Fields(rNums))
+		nums := util.StringSliceAtoi(strings.Fields(rNums))
 
 		root := buildTree2(nums)
 

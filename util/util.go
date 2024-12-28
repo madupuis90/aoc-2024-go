@@ -2,6 +2,7 @@ package util
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"strconv"
@@ -19,13 +20,32 @@ func CreateScannerFromFile(filename string) *bufio.Scanner {
 	return scanner
 }
 
-func SliceAtoi(s []string) []int {
-	var result []int
+func StringSliceAtoi(s []string) []int {
+	var result = make([]int, len(s))
 	for _, str := range s {
 		num, err := strconv.Atoi(str)
-		if err == nil {
-			result = append(result, num)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Can't convert []string to []int")
 		}
+		result = append(result, num)
 	}
 	return result
+}
+
+func RuneSliceAtoi(s []rune) []int {
+	var result = make([]int, len(s))
+	for i, r := range s {
+		result[i] = int(r - '0')
+	}
+	return result
+}
+
+func PrintGrid[T any](grid [][]T) {
+	for _, r := range grid {
+		fmt.Println(r)
+		// for _, c := range r {
+		// 	fmt.Printf("%v ", c)
+		// }
+		// fmt.Printf("\n")
+	}
 }

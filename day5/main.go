@@ -35,11 +35,11 @@ func part1(f string) int {
 		line := scanner.Text()
 		if strings.Contains(line, "|") { // rule line
 			s := strings.Split(line, "|")
-			pair := util.SliceAtoi(s)
+			pair := util.StringSliceAtoi(s)
 			dag[pair[0]] = append(dag[pair[0]], pair[1])
 		} else if strings.Contains(line, ",") { // update line
 			s := strings.Split(line, ",")
-			pages := util.SliceAtoi(s)
+			pages := util.StringSliceAtoi(s)
 			updates = append(updates, pages)
 		}
 	}
@@ -132,11 +132,11 @@ func part2(f string) int {
 		line := scanner.Text()
 		if strings.Contains(line, "|") { // rule line
 			s := strings.Split(line, "|")
-			pair := util.SliceAtoi(s)
+			pair := util.StringSliceAtoi(s)
 			dag[pair[0]] = append(dag[pair[0]], pair[1])
 		} else if strings.Contains(line, ",") { // update line
 			s := strings.Split(line, ",")
-			pages := util.SliceAtoi(s)
+			pages := util.StringSliceAtoi(s)
 			updates = append(updates, pages)
 		}
 	}
