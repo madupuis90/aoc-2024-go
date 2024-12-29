@@ -22,12 +22,12 @@ func CreateScannerFromFile(filename string) *bufio.Scanner {
 
 func StringSliceAtoi(s []string) []int {
 	var result = make([]int, len(s))
-	for _, str := range s {
+	for i, str := range s {
 		num, err := strconv.Atoi(str)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Can't convert []string to []int")
 		}
-		result = append(result, num)
+		result[i] = num
 	}
 	return result
 }
